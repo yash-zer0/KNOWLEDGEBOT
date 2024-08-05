@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  
+  <div class="banner d-flex flex-column text-center">
+
+    <!-- navbar -->
+    
+
+    <!-- image input -->
+    <div class="container d-flex flex-column align-items-center justify-content-center h-100 " >
+        <h1 class="text-light"> KNOWLEDGEBOT</h1>
+        <h3 class="text-light"> <span id="typed-text"></span></h3>
+
+
+        <!-- <h2 class="text-light">Please upload your image</h2>
+        <input type="file" class="text-light" accept="image/*" onchange="previewImage(event)">
+        <br>
+        <img id="preview" class="text-light" alt="Preview Image"> -->
+    </div>
+
+</div>
+
+
+
+<div class="container-fluid d-flex justify-content-center align-items-center vh-110 bg" id="a">
+  <div class="row mt-5">
+    <div class="animation-container p-0 col-md-6 text-center flex-row">
+      <h2 class="mt-5 mb-4" style="white-space: nowrap;">ASK YOUR DOUBTS HERE</h2>
+  
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    function previewImage(event) {
+      var input = event.target;
+      var image = document.getElementById('preview');
+      var imageText = document.getElementById('imageText');
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          image.src = e.target.result;
+          image.style.display = 'block';
+          imageText.style.display = 'none';
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    
+  </script>
+
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var typed = new Typed("#typed-text", {
+      strings: [
+        'Your ultimate study companion.',
+        'Get answers to all your academic queries..',
+        'Your go-to bot for academic success.',
+        'Master complex subjects with ease.'
+      ],
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 2000,
+      startDelay: 1000,
+      loop: true
+    });
+
+    window.addEventListener("scroll", function() {
+    const animationContainer = document.querySelector(".animation-container");
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if (animationContainer.offsetTop < scrollPosition) {
+      animationContainer.style.animation = "fly-in 1s ease-out both";
+    }
+  });
+  });
+</script>
+<script>
+  // JavaScript to trigger the animation when scrolling down
+  window.addEventListener("scroll", function() {
+    const animationContainer = document.querySelector(".animation-container");
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if (animationContainer.offsetTop < scrollPosition) {
+      animationContainer.style.animation = "fly-in 1s ease-out both";
+    }
+  });
+</script>
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
